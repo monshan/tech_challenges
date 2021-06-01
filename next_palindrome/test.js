@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { findNextPalindrome } from './index.js';
+import { findNextPalindrome } from './refactorTwo.js';
 
 describe('Find Next Palindrome algorithm', () => {
   it('Should only accept an integer', () => {
