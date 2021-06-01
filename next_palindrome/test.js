@@ -1,4 +1,5 @@
-import { findNextPalindrome } from './index';
+import expect from 'chai';
+import { findNextPalindrome } from './index.js';
 
 describe('Find Next Palindrom algorithm', () => {
   it('Should only accept an integer', () => {
@@ -13,4 +14,4 @@ describe('Find Next Palindrom algorithm', () => {
   // it('Should return an integer', () => {
 
   // })
-})
+});

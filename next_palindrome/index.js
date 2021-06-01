@@ -5,6 +5,3 @@ export const findNextPalindrome = baseInt => {
   
   if (original === baseInt.toString().split('').reverse()) return baseInt;
 }
-
-
-findNextPalindrome(101);
