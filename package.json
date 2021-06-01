@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  }
+}
