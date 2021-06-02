@@ -32,11 +32,9 @@ export const toRoman = source => {
       romans += translator[highest];
       repeats--;
     }
+    if (source > 0) interpret();
+    if (source === 0) return romans;
   }
 
-  do {
-    interpret();
-  } while (source >= 0);
-
-  return romans;
+  return interpret();
 }
