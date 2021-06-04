@@ -17,15 +17,17 @@
 
 export const findCommonNumbers = listOfArrays => {
   return listOfArrays.reduce((curr, acc, idx) => {
-    if (idx === 1) {
+    if (idx === 0) {
       acc = curr;
       return acc;
     }
-    curr.forEach(num => {
-      if (!acc.includes(num)) {
-        acc.splice(curr.indexOf(num), 1);
+    
+    acc.forEach(num => {
+      if (!curr.includes(num)) {
+        acc.splice(acc.indexOf(num), 1);
       }
     })
+    
     return acc;
   }, [])
 }
