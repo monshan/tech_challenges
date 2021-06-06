@@ -16,11 +16,18 @@ export const combineLists = (list1, list2) => {
   const combined = digger(list1).concat(digger(list2)).sort((a, b) => a - b);
   
   const makeLinkedList = entries => {
-    // let head = new ListNode(entries[0]);
-    // for (let i = 1; i < entries.length; i++) {
-    //   head.next = new ListNode(entries[i]);
-    // }
+    return entries.reduceRight((acc, curr, idx) => {
+      if (idx === 0) {
+        acc = new ListNode(curr);
+        return acc;
+      }
+      let replacement = new ListNode(curr);
+      replacement.next = acc;
+      acc = replacement;
+      console.log(acc);
+      return acc;
+    }, null);
   }
 
-  return combined;
+  return makeLinkedList(combined);
 }

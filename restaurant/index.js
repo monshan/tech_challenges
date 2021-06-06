@@ -71,12 +71,14 @@ export const guessReciept = total => {
   const attempt = allMenuItems.reduce((guess, item, index) => {
     if (total === 0) return guess;
     if (total % item[1] === 0) {
-      guess[item[0]] = total / item[1];
-      guess.totalItems += 1;
+      guess[item[0]] = Math.floor(total / item[1]);
+      guess.totalItems++;
       total = total % item[1]; 
     }
     if (Object.values(menuItems).find(price => total % item[1] === price)) {
-      
+      guess[item[0]] = Math.floor(total / item[1]);
+      guess.totalItems++;
+      total = total % item[1];
     }
     return guess;
   }, {
