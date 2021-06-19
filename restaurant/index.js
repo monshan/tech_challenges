@@ -68,6 +68,7 @@ Example:
 
 export const guessReciept = total => {
   const allMenuItems = Object.entries(menuItems);
+  console.log(allMenuItems);
   const attempt = allMenuItems.reduce((guess, item, index) => {
     if (total === 0) return guess;
     if (total % item[1] === 0) {
@@ -75,11 +76,15 @@ export const guessReciept = total => {
       guess.totalItems++;
       total = total % item[1]; 
     }
-    if (Object.values(menuItems).find(price => total % item[1] === price)) {
-      guess[item[0]] = Math.floor(total / item[1]);
-      guess.totalItems++;
-      total = total % item[1];
-    }
+    // if (Object.values(menuItems).find(price => total % item[1] === price)) {
+    //   const nextFit = 
+    //   guess[item[0]] = Math.floor(total / item[1]);
+    //   guess.totalItems++;
+    //   total = total % item[1];
+
+    //   guess.totalItems++;
+    //   total = 
+    // }
     return guess;
   }, {
     'totalItems': 0
